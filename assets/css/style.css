@@ -8,6 +8,10 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.text-white {
+    color: #fff;
+}
+
 #main {}
 
 #header {
@@ -159,12 +163,256 @@ html {
     line-height: 2;
 }
 
-.colletion {
-    background-color: #000;
+#content .about-list {
+    padding: 48px 0;
+    /* Hien thi khoi cua about-list va day bo suu tap xuong duoi */
+    overflow: hidden;
+}
+
+#content .about-item {
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+}
+
+#content .about-name {
+    font-size: 15px;
+    padding: 15px 0;
+}
+
+#content .about-image {
+    width: 255px;
+    border-radius: 5px;
 }
 
 #content .colletion {
+    background-color: #000;
+}
+
+
+/* Tickets */
+
+.tickets-list {
+    background-color: #fff;
+}
+
+.tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+    list-style-type: none;
+}
+
+.tickets-list .date {
+    background-color: #4fe013;
     color: #fff;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
+
+
+/* Collection */
+
+.image-list {
+    padding: 25px 0;
+    overflow: hidden;
+    /* Cho 3 anh can ra 2 ben goc */
+    margin: 0 -8px;
+    padding-bottom: 48px;
+}
+
+.image-body {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.image-list .heading {
+    font-size: 15px;
+}
+
+.image-list .time {
+    color: #757575;
+    margin-top: 15px;
+}
+
+.image-list .description {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.image-item {
+    float: left;
+    width: 33.3333%;
+    padding: 0 8px;
+}
+
+.image-img {
+    width: 100%;
+    display: block;
+}
+
+.image-img:hover {
+    opacity: 0.6;
+}
+
+.see-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.see-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    /* nam giua chieu doc */
+    align-items: center;
+    /* nam giua chieu ngang */
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal .modal-container {
+    position: relative;
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    /* Khi thu nho man hinh thi van cach trai phai 16px */
+    max-width: calc(100% - 32px);
+}
+
+.modal .modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.modal-close:hover {
+    cursor: pointer;
+    color: #000;
+    background-color: #ccc;
+}
+
+.modal-header .icon-change {
+    margin-right: 20px;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.submit {
+    width: 100%;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #009688;
+    letter-spacing: 4px;
+    border-radius: 4px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-footer .button-close {
+    float: left;
+    background-color: #f44336;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 24px;
+    padding: 8px;
+    margin-left: 20px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.modal-footer .button-close:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.footer-close {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.modal-help {
+    color: #2196F3;
+    margin-left: 5px;
+}
+
+.modal-need-help {
+    float: right;
+    padding: 25px;
 }
 
 #footer {}
