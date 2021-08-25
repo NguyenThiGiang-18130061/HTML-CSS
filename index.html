@@ -54,16 +54,16 @@
                     ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <div class="about-list">
-                    <div class="about-item">
+                <div class="row about-list">
+                    <div class="col col-third text-center">
                         <p class="about-name">Tóc Ngắn</p>
                         <img src="./assets/img/anh2.jpg" alt="" class="about-image">
                     </div>
-                    <div class="about-item">
+                    <div class="col col-third text-center">
                         <p class="about-name">Tóc Dài</p>
                         <img src="./assets/img/anh1.jpg" alt="" class="about-image">
                     </div>
-                    <div class="about-item">
+                    <div class="col col-third text-center">
                         <p class="about-name">Bác Cháu</p>
                         <img src="./assets/img/anh3.jpg" alt="" class="about-image">
                     </div>
@@ -83,9 +83,9 @@
                     </ul>
                     <!-- Tickets -->
                     <!-- list-image -->
-                    <div class="image-list">
+                    <div class="row image-list">
                         <!-- Anh 1 -->
-                        <div class="image-item">
+                        <div class="col col-third">
                             <img src="./assets/img/quan-su.jpg" alt="Quân Sự" class="image-img">
                             <div class="image-body">
                                 <h3 class="heading">Quân Sự</h3>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <!-- Anh 2 -->
-                        <div class="image-item">
+                        <div class="col col-third">
                             <img src="./assets/img/mtl.jpg" alt="Quân Sự" class="image-img">
                             <div class="image-body">
                                 <h3 class="heading">Ma Thiên lãnh</h3>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <!-- Anh 3 -->
-                        <div class="image-item">
+                        <div class="col col-third">
                             <img src="./assets/img/vung-tau.jpg" alt="Quân Sự" class="image-img">
                             <div class="image-body">
                                 <h3 class="heading">Vũng Tàu</h3>
@@ -123,11 +123,31 @@
             <div class="content-section">
                 <h2 class="section-heading">LIÊN HỆ</h2>
                 <p class="section-sub-heading">Đôi chút về bản thân</p>
-                <p class="about-text">
-                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <div class="row contact-content">
+                    <div class="col col-half contact-info">
+                        <p><i class="ti-location-pin"></i>Tân Hà, Tân Châu,Tây Ninh</p>
+                        <p><i class="ti-mobile"></i>0372660890</p>
+                        <p><i class="ti-email"></i>nguyenthigiang1224@gmail.com</p>
+                    </div>
+                    <div class="col col-half contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half">
+                                    <input type="text" placeholder="Name" required class="form-control">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="text" placeholder="Email" required class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-8">
+                                <div class="col col-full">
+                                    <input type="text" placeholder="Message" required class="form-control">
+                                </div>
+                            </div>
+                            <button class="mt-16 form-submit" value="SEND">SEND</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <!-- End: Contact -->
         </div>
@@ -137,8 +157,8 @@
         </div>
     </div>
     <!-- Tao lop phu len web khi click vao button Xem them -->
-    <div class="modal open js-modal">
-        <div class="modal-container">
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
             <!-- Nut X -->
             <div class="modal-close js-modal-close">
                 <i class="ti-close"></i>
@@ -182,6 +202,7 @@
         // querySelectorAll() lay tat ca cac classs
         const seeBtns = document.querySelectorAll('.js-seemore')
         const modalOpen = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
         const modalClose = document.querySelector('.js-modal-close')
         const modalCloseFooter = document.querySelector('.js-close-footer')
             // Ham hien thi modal xem them(Them class open vao modal)
@@ -199,6 +220,13 @@
         // Nghe hanh vi click vao button close
         modalClose.addEventListener('click', hideSeeMore)
         modalCloseFooter.addEventListener('click', hideSeeMore)
+            // Bam hoai khung modal co the tat duoc khung modal
+        modalOpen.addEventListener('click', hideSeeMore)
+
+        // Ngung khi click vao khung modal-container, chi click ngoai khung moi tat
+        modalContainer.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
     </script>
 </body>
 
